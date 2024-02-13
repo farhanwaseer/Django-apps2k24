@@ -40,3 +40,21 @@ def menu(response):
 
 def book(response):
     return HttpResponse('<h2>Book</h2>')
+
+def pathview(request,name,id):
+    return HttpResponse(f'<h2>Name: {name}<br/> UserId: {id}</h2>')
+
+def qryview(request):
+    name = request.GET['name']
+    id = request.GET['id']
+
+    return HttpResponse(f'<h2>With qury View Name: {name} UserId: {id}</h2>')
+
+def showform(request):
+    return render(request, 'form.html')
+
+def getform(request): 
+    if request.method == "POST": 
+        name=request.POST['name'] 
+        id=request.POST['id'] 
+    return HttpResponse(f"Name:{name} UserID:{id}") 

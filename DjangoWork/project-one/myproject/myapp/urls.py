@@ -9,5 +9,9 @@ urlpatterns = [
     path('menu/', views.menu, name='menu'),
     path('book/', views.book, name='book'),
     # path('drinks/', views.drinks, name='drinks'),
-    path('drinks/<str:drink_name>',views.drinks,name='drink_name'),    
+    path('drinks/<str:drink_name>',views.drinks,name='drink_name'),
+    path('getuser/<name>/<id>', views.pathview, name='pathview'),
+    path('myapp/getuser/', views.qryview, name='qryview'),
+    path('myapp/showform/', views.showform, name='showform'),
+    path("myapp/getform/", views.getform, name='getform'),    
 ]
